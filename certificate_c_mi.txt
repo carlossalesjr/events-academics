@@ -1,0 +1,13 @@
+----------------------------------------
+               CERTIFICATE              
+----------------------------------------
+
+This is to certify that C (Student - ID: 1)
+participated in the event 'mi',
+of type 'Course',
+held on 12/10/2024, at 'v'.
+
+Event Description: er
+Workload: 10 hours
+
+----------------------------------------

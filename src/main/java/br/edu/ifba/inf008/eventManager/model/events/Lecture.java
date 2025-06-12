@@ -1,19 +1,13 @@
 package br.edu.ifba.inf008.eventManager.model.events;
 
-import java.util.ArrayList;
-
-import br.edu.ifba.inf008.eventManager.model.participants.Participant;
+import java.time.LocalDate;
 
 public class Lecture extends Event {
     private String speaker;
-    private int duration;
-    private boolean isOnline;
 
-    public Lecture(String title, String description, String date, String locale, int capacity, ArrayList<Participant> participants, String speaker, int duration, boolean isOnline) {
-        super(title, description, date, locale, capacity, null);
+    public Lecture(String title, LocalDate date, String location, int maxCapacity, String description, String speaker) {
+        super(title, date, location, maxCapacity, description);
         this.speaker = speaker;
-        this.duration = duration;
-        this.isOnline = isOnline;
     }
 
     public String getSpeaker() {
@@ -24,30 +18,14 @@ public class Lecture extends Event {
         this.speaker = speaker;
     }
 
-    public boolean isOnline() {
-        return isOnline;
-    }
-    
-    public void setOnline(boolean isOnline) {
-        this.isOnline = isOnline;
-    }
-
-    public int getDuration() {
-        return duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-
     @Override
-    public String getEventType() {
+    public String getDetailedEventType() {
         return "Lecture";
     }
 
     @Override
-    public String getEventId() {
-        return "L123"; // Example ID, should be generated or passed as needed
+    public String toString() {
+        return super.toString() + "\n" +
+               "  Speaker: " + speaker;
     }
-    
 }

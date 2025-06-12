@@ -1,17 +1,13 @@
 package br.edu.ifba.inf008.eventManager.model.events;
 
-import java.util.ArrayList;
-
-import br.edu.ifba.inf008.eventManager.model.participants.Participant;
+import java.time.LocalDate;
 
 public class Workshop extends Event {
     private String instructor;
-    private int duration;
 
-    public Workshop(String title, String description, String date, String locale, int capacity, ArrayList<Participant> participants, String instructor, int duration, boolean isOnline) {
-        super(title, description, date, locale, capacity, null);
+    public Workshop(String title, LocalDate date, String location, int maxCapacity, String description, String instructor) {
+        super(title, date, location, maxCapacity, description);
         this.instructor = instructor;
-        this.duration = duration;
     }
 
     public String getInstructor() {
@@ -22,22 +18,14 @@ public class Workshop extends Event {
         this.instructor = instructor;
     }
 
-    public int getDuration() {
-        return duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-
     @Override
-    public String getEventType() {
+    public String getDetailedEventType() {
         return "Workshop";
     }
 
     @Override
-    public String getEventId() {
-        return "W123";
+    public String toString() {
+        return super.toString() + "\n" +
+               "  Instructor: " + instructor;
     }
-    
 }

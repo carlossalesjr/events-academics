@@ -1,15 +1,13 @@
 package br.edu.ifba.inf008.eventManager.model.participants;
 
-import java.time.LocalDateTime;
-
 public class Professor extends Participant {
     private String department;
-    private String professorID;
+    private String siapeId;
 
-    public Professor(String name, String email, String phone, LocalDateTime registrationDate, String department, String professorID) {
-        super(name, email, phone, registrationDate);
+    public Professor(String name, String email, String department, String siapeId) {
+        super(name, email);
         this.department = department;
-        this.professorID = professorID;
+        this.siapeId = siapeId;
     }
 
     public String getDepartment() {
@@ -20,22 +18,20 @@ public class Professor extends Participant {
         this.department = department;
     }
 
-    public String getProfessorID() {
-        return professorID;
+    public String getSiapeId() {
+        return siapeId;
     }
 
-    public void setProfessorID(String professorID) {
-        this.professorID = professorID;
+    public void setSiapeId(String siapeId) {
+        this.siapeId = siapeId;
     }
 
     @Override
+    public String getPrimaryIdentification() {
+        return siapeId;
+    }
+     @Override
     public String getParticipantType() {
         return "Professor";
     }
-
-    @Override
-    public String getParticipantId() {
-        return professorID;
-    }
-    
 }
